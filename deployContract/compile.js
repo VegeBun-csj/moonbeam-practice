@@ -1,9 +1,11 @@
 const fs = require('fs');
+const path = require('path');
 const solc = require('solc');
 
 // Get Path and Load Contract
 // 读取合约文件
-const source = fs.readFileSync('Incrementer.sol', 'utf8');
+const configPath = path.join(__dirname, '../Contracts/Incrementer.sol')
+const source = fs.readFileSync(configPath, 'utf8');
 
 // Compile Contract
 const input = {
